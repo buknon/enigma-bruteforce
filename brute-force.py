@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 
-from multiprocessing import cpu_count, Event, Queue, Pool
+#from multiprocessing import cpu_count, Event, Queue, Pool
+from multiprocessing import cpu_count, Event, Pool
 import time
 import argparse
+from my_queue import MyQueue
 
 from enigma.machine import EnigmaMachine
 
@@ -17,8 +19,8 @@ PLAINTEXT = ''
 
 stop_event = Event()
 max_queue_size = 4*cpu_count()
-data_queue = Queue(max_queue_size)
-solution_queue = Queue(cpu_count())
+data_queue = MyQueue()
+solution_queue = MyQueue()
 
 
 def combinations_task(ciphertext, plaintext):
