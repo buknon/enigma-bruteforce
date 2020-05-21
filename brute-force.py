@@ -50,12 +50,11 @@ def run_enigma_task(num):
             ring_settings=d["ring"],
             plugboard_settings=d["plug"])
 
-        print("Created enigma from settings: ")
-        print(d)
+        #print("Created enigma from settings: ")
+        #print(d)
         # <-- 17576 iterations -->
         for r in generate_rotor_positions():
             machine.set_display(r)
-
             for cipher, char in zip(CIPHERTEXT, PLAINTEXT):
                 output = machine.process_text(cipher)
                 if output != char:

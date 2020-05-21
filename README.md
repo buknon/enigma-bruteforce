@@ -6,7 +6,7 @@ Brian Neal's Py-Enigma library is used to simulate the enigma. All possible comb
 
 Example:
 ```
-$ python3 main.py --plaintext=GITHUB --ciphertext=PYJAMA
+$ python3 brute-force.py --plaintext=GITHUB --ciphertext=PYJAMA
 ```
 This outputs (after a while of searching):
 ```
